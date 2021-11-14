@@ -3,7 +3,7 @@
 typedef struct{
    int capacity;         //容量
    int length;           //长度
-   unsigned int *node;   //节点指针
+   unsigned long *node;   //节点指针
 }TSeqList;
 
 /*创建一个空的线性表*/
@@ -20,7 +20,7 @@ SeqList* SeqList_Create(int capacity) {
    }
    memset(tmp,0,sizeof(TSeqList));
 
-  tmp->node =(unsigned int*)malloc(sizeof(unsigned int*)*capacity);
+  tmp->node =(unsigned long*)malloc(sizeof(unsigned long*)*capacity);
   if(tmp->node == NULL) {
      ret = -2;
      printf("func SeqList_Create() err:%d\n",ret);
@@ -29,6 +29,7 @@ SeqList* SeqList_Create(int capacity) {
 
   tmp->length = 0;
   tmp->capacity = capacity;
+
   return tmp;
 }
 
@@ -128,20 +129,20 @@ int SeqList_Insert(SeqList* list,SeqListNode* node,int pos) {
   for(i = tlist->length; i > pos; i--) {
      tlist->node[i] = tlist->node[i-1];
   }
-  tlist->node[i]=(unsigned int*)node;
+  tlist->node[i] = (unsigned int*)node;
   tlist->length++;
+
   return ret;
 }
 
 /*获取节点位置*/
-SeqListNode *seqlist_get(SeqList* List,int pos) {
+SeqListNode *SeqList_Get(SeqList* List,int pos) {
 
-  SeqListNode *ret = 0;
+  SeqListNode *ret = NULL;
   TSeqList *tlist = NULL;
 
   if(List == NULL || pos < 0) {
-    ret = -1;
-    printf("func seqlist_get() err: %d\n ",ret);
+    printf("func SeqList_Get() err: %p\n ",ret);
     return NULL;
   }
 
@@ -154,13 +155,12 @@ SeqListNode *seqlist_get(SeqList* List,int pos) {
 SeqListNode *SeqList_Delet(SeqList* List,int pos) {
 
   int i = 0;
-  SeqListNode *ret = 0;
+  SeqListNode *ret = NULL;
   SeqListNode *node = 0;
   TSeqList *tlist;
 
   if(List == NULL || pos < 0) {
-    ret = -1;
-    printf("func SeqList_Delet() err:%d",ret);
+    printf("func SeqList_Delet() err:%p",ret);
     return ret;
   }
 

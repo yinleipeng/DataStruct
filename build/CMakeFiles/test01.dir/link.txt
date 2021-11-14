@@ -1,1 +1,0 @@
-/usr/bin/cc   -rdynamic CMakeFiles/test01.dir/seqlist.c.o CMakeFiles/test01.dir/test.c.o  -o test01 

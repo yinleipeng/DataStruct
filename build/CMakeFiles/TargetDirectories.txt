@@ -1,3 +1,0 @@
-/home/yinleipeng/DataStructure/build/CMakeFiles/rebuild_cache.dir
-/home/yinleipeng/DataStructure/build/CMakeFiles/test01.dir
-/home/yinleipeng/DataStructure/build/CMakeFiles/edit_cache.dir
