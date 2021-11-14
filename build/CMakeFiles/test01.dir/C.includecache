@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/yinleipeng/DataStructure/seqlist.c
+seqlist.h
+/home/yinleipeng/DataStructure/seqlist.h
+
+/home/yinleipeng/DataStructure/seqlist.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+
+/home/yinleipeng/DataStructure/test.c
+seqlist.h
+/home/yinleipeng/DataStructure/seqlist.h
+
